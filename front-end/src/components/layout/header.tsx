@@ -4,7 +4,7 @@ import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuL
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 export default function Header() {
-    const isLoggedIn = true;
+    const isLoggedIn = false;
     const isAdmin = true;
 
     const user = {
@@ -28,7 +28,7 @@ export default function Header() {
                                 <Link href="/auctions">Auctions</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
-                        { user.isAdmin &&
+                        { user && user.isAdmin &&
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
                                     <Link href="/manage-users">Manage Users</Link>
